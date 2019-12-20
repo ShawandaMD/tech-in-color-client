@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
+import React, {component} from 'react';
+import {connect} from 'react-redux';
 import './App.css';
 
 function App() {
