@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {connect} from 'react-redux';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from ‘/reducers’;
+import rootReducer from '/reducers';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  rootReducer, applyMiddleware(thunk)
+  /*window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()*/
 );
 
 ReactDOM.render(
