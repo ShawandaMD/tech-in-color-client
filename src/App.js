@@ -4,7 +4,7 @@ import React, {component} from 'react';
 import {connect} from 'react-redux';
 import './App.css';
 
-function App() {
+class App extends Component {
   return (
     <div className="App">
       <header className="App-header">
