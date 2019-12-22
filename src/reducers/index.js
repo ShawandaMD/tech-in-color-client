@@ -4,7 +4,9 @@ import eventReducer from './eventReducer'
 import userReducer from './userReducer'
 
 export default combineReducers({
-  activityReducer,
-  userReducer,
-  eventReducer
+  activity: activityReducer,
+  user: userReducer,
+  event: eventReducer
 })
+
+/*each key (user:)will point to one reducer (UserReducer)*/
