@@ -4,3 +4,5 @@ export default (state = {}, action) => {
       return state
   }
 }
+
+/*when state gets initial the state will fire */
