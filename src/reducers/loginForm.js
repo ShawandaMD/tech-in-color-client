@@ -5,6 +5,7 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case 'NEW_LOGIN_FORM'
       return
+        action.user /*WHY????*/
     default:
       return state
 
