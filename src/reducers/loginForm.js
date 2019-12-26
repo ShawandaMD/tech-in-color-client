@@ -3,7 +3,7 @@ const initialState = {email: "", password: ""}
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case ''
+    case 'NEW_LOGIN_FORM'
       return
     default:
       return state
