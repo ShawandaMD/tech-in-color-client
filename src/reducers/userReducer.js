@@ -6,3 +6,4 @@ export default (state = {}, action) => {
 }
 
 /*when state gets initial the state will fire */
+/*put deugger before switch to see store*/
