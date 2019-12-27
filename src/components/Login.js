@@ -14,4 +14,11 @@ const Login = () => {
   )
 }
 
-export default Login
+const mapStateToProps = (state) => {
+  return {
+    email: state.loginForm.email,
+    password: state.loginForm.password
+  }
+}
+
+export default connect(mapStateToProps)(Login)
