@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {updateLoginForm} from '../actions/loginForm.js'
+import {updateLoginForm} from '../actions/loginForm.js';
+import {login} from '../actions/currentUser.js'
+
 
 /*Container component*/
 
@@ -9,13 +11,16 @@ const Login = (state) => {
   const handleChange = event => {
     /*this.setState.loginFormData({
       [event.target.name]: event.target.value
-    })WHY DIDNT THIS WORK???*/
+    })WHY DIDNT THIS WORK???because I'm not using a class component*/
     const updatedFormInfo = {
      ...state.loginFormData,
      [event.target.name]: event.target.value
    }
      state.updateLoginForm(updatedFormInfo)
       }
+
+    /* Now we need to send data so go into action*/
+
 
   return (
     <form onSubmit={undefined}>
@@ -34,4 +39,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {updateLoginForm})(Login)
+export default connect(mapStateToProps, {updateLoginForm, login})(Login)
