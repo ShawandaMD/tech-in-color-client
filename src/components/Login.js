@@ -20,10 +20,13 @@ const Login = (state) => {
       }
 
     /* Now we need to send data so go into action*/
-
+    const handleSubmit = event => {
+      event.preventDefault()
+      login(state.loginFormData)
+    }
 
   return (
-    <form onSubmit={undefined}>
+    <form onSubmit={handleSubmit}>
       <input type="text" placeholder="Email" id="email" name="email" value={state.loginFormData.email} onChange={handleChange}/>
       <input type="text" placeholder="Password" id="password" name="password" value={state.loginFormData.password} onChange={handleChange}/>
       <input type="submit" value="Log In"/>
