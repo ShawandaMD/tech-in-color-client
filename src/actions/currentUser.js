@@ -21,7 +21,39 @@ console.log("READ CREDENTIALS", credentials)
           "Content-Type": 'application/json'
       },
       body: JSON.stringify(credentials)
-    }).then((response) => response.json())
-    .then(userInfo => {dispatch(setCurrentUser(userInfo))})
+    })
+    .then((response) => response.json())
+    .then(user => {
+      if (user.error) {
+        alert(user.error)
+      } else {
+        dispatch(setCurrentUser(user))
+      }
+    })
+    .catch(console.log)
   }
 }
+
+  // get request for user
+  export const getCurrentUser = credentials => {
+    return dispatch => {
+      return fetch("http://localhost:3001/set_current_user", {
+        credentials: "include",
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+            "Content-Type": 'application/json'
+        },
+        body: JSON.stringify(credentials)
+      })
+      .then((response) => response.json())
+      .then(user => {
+        if (user.error) {
+          alert(user.error)
+        } else {
+          dispatch(setCurrentUser(user))
+        }
+      })
+      .catch(console.log)
+    }
+  }
