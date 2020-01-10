@@ -22,7 +22,7 @@ const Login = (state) => {
     /* Now we need to send data so go into action*/
     const handleSubmit = event => {
       event.preventDefault()
-      login(state.loginFormData)
+      state.login(state.loginFormData)
     }
 
   return (
