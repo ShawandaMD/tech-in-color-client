@@ -11,15 +11,17 @@ export const setCurrentUser = user => {
 
 export const login = credentials => {
 console.log("READ CREDENTIALS", credentials)
+// debugger
   return dispatch => {
     return fetch("http://localhost:3001/login", {
       credentials: "include",
       method: 'POST',
       headers: {
-      'Content-Type': 'application/json'
+        Accept: 'application/json',
+          "Content-Type": 'application/json'
       },
-      body: JSON.stringify()
-    }
-  )
+      body: JSON.stringify(credentials)
+    }).then((response) => response.json())
+    .then(userInfo => {dispatch(setCurrentUser(userInfo))})
   }
 }
