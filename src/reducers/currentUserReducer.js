@@ -1,7 +1,7 @@
 export default (state = null, action) => {
   switch(action.type) {
     case 'SET_CURRENT_USER':
-      return
+      return action.user
     default:
       return state;
   }
