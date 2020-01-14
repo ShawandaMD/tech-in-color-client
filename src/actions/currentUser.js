@@ -35,16 +35,15 @@ console.log("READ CREDENTIALS", credentials)
 }
 
   // get request for user
-  export const getCurrentUser = credentials => {
+  export const getCurrentUser = () => {
     return dispatch => {
-      return fetch("http://localhost:3001/set_current_user", {
+      return fetch("http://localhost:3001/get_current_user", {
         credentials: "include",
         method: 'GET',
         headers: {
           Accept: 'application/json',
             "Content-Type": 'application/json'
-        },
-        body: JSON.stringify(credentials)
+        }
       })
       .then((response) => response.json())
       .then(user => {
