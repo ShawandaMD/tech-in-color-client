@@ -17,4 +17,10 @@ class App extends React.Component{
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    loggedIn: state.currentUser
+  }
+}
+
 export default connect(mapStateToProps, {getCurrentUser})(App);
