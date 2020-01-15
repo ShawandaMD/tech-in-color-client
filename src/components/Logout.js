@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {logout} from '../actions/logout.js'
 
 
 /*Container component*/
@@ -24,4 +25,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {updateLoginForm, login})(Login)
+export default connect(mapStateToProps, {logout})(Logout)
