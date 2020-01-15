@@ -9,7 +9,7 @@ const Logout = (props) => {
 
     const handleLogout = event => {
       event.preventDefault()
-      props.login(props.loginFormData)
+      props.logout()
     }
 
   return (
