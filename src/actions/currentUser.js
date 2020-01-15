@@ -5,9 +5,7 @@ export const setCurrentUser = user => {
     }
 }
 
-/*the type should be the same as in the reducer and below the reducer action should speak to rails */
-/* ASYNC */
-/*return a function that returns dispatch and this fetch to rails 3001*/
+/* ASYNCHRONOUS */
 
 export const login = credentials => {
 console.log("READ CREDENTIALS", credentials)
@@ -34,25 +32,28 @@ console.log("READ CREDENTIALS", credentials)
   }
 }
 
-  // get request for user
-  export const getCurrentUser = () => {
-    return dispatch => {
-      return fetch("http://localhost:3001/get_current_user", {
-        credentials: "include",
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-            "Content-Type": 'application/json'
-        }
-      })
-      .then((response) => response.json())
-      .then(user => {
-        if (user.error) {
-          alert(user.error)
-        } else {
-          dispatch(setCurrentUser(user))
-        }
-      })
-      .catch(console.log)
-    }
+export const logout = () =>{
+  
+}
+
+export const getCurrentUser = () => {
+  return dispatch => {
+    return fetch("http://localhost:3001/get_current_user", {
+      credentials: "include",
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+          "Content-Type": 'application/json'
+      }
+    })
+    .then((response) => response.json())
+    .then(user => {
+      if (user.error) {
+        alert(user.error)
+      } else {
+        dispatch(setCurrentUser(user))
+      }
+    })
+    .catch(console.log)
   }
+}
