@@ -19,10 +19,4 @@ const Logout = (props) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    loginFormData: state.loginForm
-  }
-}
-
-export default connect(mapStateToProps, {logout})(Logout)
+export default connect(null, {logout})(Logout)
