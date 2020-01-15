@@ -9,7 +9,6 @@ export const setCurrentUser = user => {
 
 export const login = credentials => {
 console.log("READ CREDENTIALS", credentials)
-// debugger
   return dispatch => {
     return fetch("http://localhost:3001/login", {
       credentials: "include",
@@ -33,7 +32,13 @@ console.log("READ CREDENTIALS", credentials)
 }
 
 export const logout = () =>{
-  
+  return dispatch => {
+    return fetch("http://localhost:3001/logout",{
+      credentials: "include",
+      method: 'DELETE'
+    })
+    .then(res => res.json());
+  };
 }
 
 export const getCurrentUser = () => {
