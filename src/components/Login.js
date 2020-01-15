@@ -6,29 +6,29 @@ import {login} from '../actions/currentUser.js'
 
 /*Container component*/
 
-const Login = (state) => {
+const Login = (props) => {
 
   const handleChange = event => {
     /*this.setState.loginFormData({
       [event.target.name]: event.target.value
     })WHY DIDNT THIS WORK???because I'm not using a class component*/
     const updatedFormInfo = {
-     ...state.loginFormData,
+     ...props.loginFormData,
      [event.target.name]: event.target.value
    }
-     state.updateLoginForm(updatedFormInfo)
+     props.updateLoginForm(updatedFormInfo)
       }
 
     /* Now we need to send data so go into action*/
     const handleSubmit = event => {
       event.preventDefault()
-      state.login(state.loginFormData)
+      props.login(props.loginFormData)
     }
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Email" id="email" name="email" value={state.loginFormData.email} onChange={handleChange}/>
-      <input type="text" placeholder="Password" id="password" name="password" value={state.loginFormData.password} onChange={handleChange}/>
+      <input type="text" placeholder="Email" id="email" name="email" value={props.loginFormData.email} onChange={handleChange}/>
+      <input type="text" placeholder="Password" id="password" name="password" value={props.loginFormData.password} onChange={handleChange}/>
       <input type="submit" value="Log In"/>
     </form>
   )
