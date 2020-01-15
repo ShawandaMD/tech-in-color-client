@@ -1,8 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import './App.css';
-import {getCurrentUser} from './actions/currentUser.js'
 import Login from './components/Login.js'
+import Logout from './components/Logout.js'
+import {getCurrentUser} from './actions/currentUser.js'
+
 
 
 class App extends React.Component{
@@ -12,14 +14,16 @@ class App extends React.Component{
 
   render() {
     return (
-      <Login />
+      <div>
+        {this.props.loggedIn ? <Login /> : <Logout />}
+      </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    loggedIn: state.currentUser
+    loggedIn: !state.currentUser
   }
 }
 
