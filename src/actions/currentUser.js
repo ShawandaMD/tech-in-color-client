@@ -1,3 +1,5 @@
+/* SYNCHRONOUS ACTION CREATORS(REFLECTED IN REDUCER) */
+
 export const setCurrentUser = user => {
     return {
       type: "SET_CURRENT_USER",
@@ -5,7 +7,13 @@ export const setCurrentUser = user => {
     }
 }
 
-/* ASYNCHRONOUS */
+export const clearCurrentUser = () => {
+    return {
+      type: "CLEAR_CURRENT_USER"
+    }
+}
+
+/* ASYNCHRONOUS ACTION CREATORS */
 
 export const login = credentials => {
 console.log("READ CREDENTIALS", credentials)
@@ -31,8 +39,9 @@ console.log("READ CREDENTIALS", credentials)
   }
 }
 
-export const logout = () =>{
+export const logout = () => {
   return dispatch => {
+    dispatch(clearCurrentUser())
     return fetch("http://localhost:3001/logout",{
       credentials: "include",
       method: 'DELETE'
