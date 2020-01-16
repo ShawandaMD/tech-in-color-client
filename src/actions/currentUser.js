@@ -50,6 +50,8 @@ export const logout = () => {
   };
 }
 
+export const signup = () => {}
+
 export const getCurrentUser = () => {
   return dispatch => {
     return fetch("http://localhost:3001/get_current_user", {
