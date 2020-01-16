@@ -21,4 +21,4 @@ const Signup = (props) => {
   )
 }
 
-export default connect()(Signup)
+export default connect(mapStateToProps, {updateSignupForm, signup})(Signup)
