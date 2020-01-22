@@ -4,6 +4,7 @@ import './App.css';
 import Login from './components/Login.js'
 import Logout from './components/Logout.js'
 import {getCurrentUser} from './actions/currentUser.js'
+import Signup from './components/Signup.js'
 
 
 
