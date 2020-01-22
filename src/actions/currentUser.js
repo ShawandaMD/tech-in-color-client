@@ -52,7 +52,11 @@ export const logout = () => {
 
 export const signup = data => {
   console.log("NEW USER", data)
+  debugger
   return dispatch => {
+    const userData = {
+      user: data
+    }
     return fetch("http://localhost:3001/signup", {
       credentials: "include",
       method: 'POST',
@@ -60,9 +64,9 @@ export const signup = data => {
         Accept: 'application/json',
           "Content-Type": 'application/json'
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(userData)
     })
-  }  
+  }
 }
 
 export const getCurrentUser = () => {
