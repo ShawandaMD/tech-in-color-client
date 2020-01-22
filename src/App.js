@@ -15,6 +15,7 @@ class App extends React.Component{
   render() {
     return (
       <div>
+        // consider putting in navbar
         {this.props.loggedIn ? <Login /> : <Logout />}
       </div>
     );
