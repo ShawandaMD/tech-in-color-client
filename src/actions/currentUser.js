@@ -52,7 +52,6 @@ export const logout = () => {
 
 export const signup = data => {
   console.log("NEW USER", data)
-  debugger
   return dispatch => {
     const userData = {
       user: data
@@ -66,6 +65,15 @@ export const signup = data => {
       },
       body: JSON.stringify(userData)
     })
+    .then((response) => response.json())
+    .then(user => {
+      if (user.error) {
+        alert(user.error)
+      } else {
+        dispatch(setCurrentUser(user))
+      }
+    })
+    .catch(console.log)
   }
 }
 
