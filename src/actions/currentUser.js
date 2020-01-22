@@ -50,7 +50,20 @@ export const logout = () => {
   };
 }
 
-export const signup = () => {}
+export const signup = data => {
+  console.log("NEW USER", data)
+  return dispatch => {
+    return fetch("http://localhost:3001/signup", {
+      credentials: "include",
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+          "Content-Type": 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+  }  
+}
 
 export const getCurrentUser = () => {
   return dispatch => {
