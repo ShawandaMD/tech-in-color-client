@@ -7,3 +7,10 @@ import Logout from './Logout'
 const Navbar = () => {
   return()
 }
+
+const mapStateToProps = ({currentUser}) => {
+  currentUser,
+  loggedIn: !!currentUser
+}
+
+export default connect(mapStateToProps)(Navbar)
