@@ -5,6 +5,7 @@ import Login from './components/Login.js';
 import Logout from './components/Logout.js';
 import {getCurrentUser} from './actions/currentUser.js';
 import Signup from './components/Signup.js';
+import NavBar from './components/Navbar.js'
 import { Route, Switch, withRouter } from 'react-router-dom'
 
 
@@ -17,9 +18,9 @@ class App extends React.Component{
   render() {
     return (
       <div>
-        // consider putting in navbar
-        {this.props.loggedIn ? <Login /> : <Logout />}
+        <NavBar />
         <Signup />
+
       </div>
 
     );
@@ -27,8 +28,10 @@ class App extends React.Component{
 }
 
 const mapStateToProps = (state) => {
+
   return {
-    loggedIn: !state.currentUser
+    loggedIn: !state.currentUser,
+    currentUser: state.currentUser
   }
 }
 
