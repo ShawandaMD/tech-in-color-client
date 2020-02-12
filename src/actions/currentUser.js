@@ -29,6 +29,7 @@ console.log("READ CREDENTIALS", credentials)
     })
     .then((response) => response.json())
     .then(user => {
+      //debugger
       if (user.error) {
         alert(user.error)
       } else {
@@ -92,6 +93,7 @@ export const getCurrentUser = () => {
       if (user.error) {
         alert(user.error)
       } else {
+        //debugger
         dispatch(setCurrentUser(user))
       }
     })
