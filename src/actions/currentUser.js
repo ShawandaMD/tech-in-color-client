@@ -1,5 +1,4 @@
 /* SYNCHRONOUS ACTION CREATORS(REFLECTED IN REDUCER) */
-
 export const setCurrentUser = user => {
     return {
       type: "SET_CURRENT_USER",
@@ -93,7 +92,6 @@ export const getCurrentUser = () => {
       if (user.error) {
         alert(user.error)
       } else {
-        //debugger
         dispatch(setCurrentUser(user))
       }
     })
