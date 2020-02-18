@@ -5,6 +5,6 @@ export default (state = initialState, action) => {
     case '':
       return
     default:
-      return state;  
+      return state;
   }
 }
