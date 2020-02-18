@@ -5,7 +5,6 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-  /*debugger*/
   switch (action.type) {
     case 'UPDATE_LOGIN_FORM':
       return action.formData
