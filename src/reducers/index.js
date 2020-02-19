@@ -7,9 +7,9 @@ import loginForm from './loginForm';
 import signupForm from './signupForm'
 
 export default combineReducers({
-  activity: activityReducer,
-  user: userReducer,
-  event: eventReducer,
+  activityReducer,
+  userReducer,
+  eventReducer,
   currentUser,
   loginForm,
   signupForm
