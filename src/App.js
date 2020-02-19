@@ -7,6 +7,7 @@ import {getCurrentUser} from './actions/currentUser.js';
 import Signup from './components/Signup.js';
 import NavBar from './components/Navbar.js'
 import Events from './components/Events.js'
+import Homepage from  './components/Homepage.js'
 import { Route, Switch, withRouter } from 'react-router-dom'
 
 
@@ -19,9 +20,7 @@ class App extends React.Component{
   render() {
     return (
       <div>
-        <NavBar />
-        <Signup />
-        <Events />
+        {this.props.loggedIn ? <NavBar /> : <Homepage /> }
 
       </div>
 
