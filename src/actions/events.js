@@ -20,7 +20,7 @@ export const getEvents = () => {
    })
    .then((response) => response.json())
    .then(events => {
-     debugger
+     // debugger
      if (events.error) {
        alert(events.error)
      } else {
