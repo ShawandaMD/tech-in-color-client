@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {logout} from '../actions/currentUser.js'
+import { withRouter } from 'react-router-dom'
 
 
 /*Container component*/
@@ -10,6 +11,7 @@ const Logout = (props) => {
     const handleLogout = event => {
       event.preventDefault()
       props.logout()
+      props.history.push('/')
     }
 
   return (
@@ -19,4 +21,4 @@ const Logout = (props) => {
   )
 }
 
-export default connect(null, {logout})(Logout)
+export default withRouter(connect(null, {logout})(Logout))
