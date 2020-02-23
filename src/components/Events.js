@@ -3,10 +3,10 @@ import {connect} from 'react-redux';
 import {getEvents} from '../actions/events.js'
 
 const Events = (props) => {
-  debugger
+  // debugger
   return(
     <div>
-      {props.getEvents()}
+      Hello
     </div>
   )
 }
