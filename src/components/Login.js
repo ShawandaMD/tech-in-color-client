@@ -7,7 +7,7 @@ import {login} from '../actions/currentUser.js'
 /*Container component*/
 
 const Login = (props) => {
-
+  
   const handleChange = event => {
     /*this.setState.loginFormData({
       [event.target.name]: event.target.value
@@ -22,7 +22,7 @@ const Login = (props) => {
     /* Now we need to send data so go into action*/
     const handleSubmit = event => {
       event.preventDefault()
-      props.login(props.loginFormData)
+      props.login(props.loginFormData, props.history)
     }
 
   return (
