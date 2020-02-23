@@ -20,14 +20,8 @@ class App extends React.Component{
   render() {
     return (
       <div>
-        {this.props.loggedIn ? <NavBar /> : <Homepage /> }
-
-        <Switch>
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-
-        </Switch>
-
+        {this.props.loggedIn ? <NavBar /> : <Homepage />}
+        <Events />
 
       </div>
 
@@ -38,7 +32,7 @@ class App extends React.Component{
 const mapStateToProps = (state) => {
 
   return {
-    loggedIn: !state.currentUser,
+    loggedIn: !!state.currentUser,
     currentUser: state.currentUser
   }
 }
