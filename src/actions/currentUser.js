@@ -1,3 +1,5 @@
+import { getEvents } from "./events.js"
+
 /* SYNCHRONOUS ACTION CREATORS(REFLECTED IN REDUCER) */
 export const setCurrentUser = user => {
     return {
@@ -14,7 +16,7 @@ export const clearCurrentUser = () => {
 
 /* ASYNCHRONOUS ACTION CREATORS */
 
-export const login = credentials => {
+export const login = (credentials, history) => {
 console.log("READ CREDENTIALS", credentials)
   return dispatch => {
     return fetch("http://localhost:3001/login", {
@@ -33,6 +35,8 @@ console.log("READ CREDENTIALS", credentials)
         alert(user.error)
       } else {
         dispatch(setCurrentUser(user))
+        dispatch(getEvents())
+        history.push('/events')
       }
     })
     .catch(console.log)
@@ -93,6 +97,7 @@ export const getCurrentUser = () => {
         alert(user.error)
       } else {
         dispatch(setCurrentUser(user))
+        dispatch(getEvents())
       }
     })
     .catch(console.log)
