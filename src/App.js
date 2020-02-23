@@ -22,6 +22,11 @@ class App extends React.Component{
       <div>
         {this.props.loggedIn ? <NavBar /> : <Homepage />}
         <Events />
+        <Switch>
+          <Route exact path='/login' component={Login}/>
+          <Route exact path='/signup'component={Signup}/>
+        </Switch>
+
 
       </div>
 
