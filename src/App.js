@@ -20,9 +20,8 @@ class App extends React.Component{
   render() {
     return (
       <div>
-
+        {this.props.loggedIn ? <NavBar /> : <Homepage />}
         <Switch>
-          <Route exact path='/' render={(props) => this.props.loggedIn ? <NavBar /> : <Homepage />}/>
           <Route exact path='/login' component={Login}/>
           <Route exact path='/signup'component={Signup}/>
           <Route exact path='/events'component={Events}/>
