@@ -19,12 +19,11 @@ export const getEvents = () => {
      }
    })
    .then((response) => response.json())
-   .then(events => {
-     // debugger
-     if (events.error) {
-       alert(events.error)
+   .then(eventsArray => {
+     if (eventsArray.error) {
+       alert(eventsArray.error)
      } else {
-       dispatch(setEvents(events))
+       dispatch(setEvents(eventsArray))
      }
    })
    .catch(console.log)
