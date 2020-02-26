@@ -2,14 +2,18 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 const MyEvents = (props) => {
-  return(
-    <div> HELLO!!!</div>
+  const myEventCards = props.myEvents.map(e =>
+    <li key={e.id}>{e.title} by {e.organizer}</li>)
+    debugger
+  return (
+    <ul>{myEventCards}</ul>
   )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({currentUser}) => {
   return {
-  
+    currentUser,
+    myEvents: props.currentUser.events
   }
 }
 
