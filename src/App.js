@@ -7,6 +7,7 @@ import {getCurrentUser} from './actions/currentUser.js';
 import Signup from './components/Signup.js';
 import NavBar from './components/Navbar.js'
 import Events from './components/Events.js'
+import MyEvents from './components/MyEvents.js'
 import Homepage from  './components/Homepage.js'
 import { Route, Switch, withRouter } from 'react-router-dom'
 
@@ -24,7 +25,7 @@ class App extends React.Component{
         <Switch>
           <Route exact path='/login' component={Login}/>
           <Route exact path='/signup'component={Signup}/>
-          <Route exact path='/events'component={Events}/>
+          <Route exact path='/my_events'component={MyEvents}/>
 
         </Switch>
 
