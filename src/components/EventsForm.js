@@ -1,10 +1,19 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import updateEventForm from '../actions/eventsForm.js'
+import {updateEventForm} from '../actions/eventsForm.js' //I want to update the new events form
+import  from '../actions/events'//create a new event
 
 
 
 const EventForm = (props) => {
+
+  const handleChange = event => {
+    const updatedFormInfo = {
+     ...props.eventsFormData,
+     [event.target.name]: event.target.value
+   }
+     props.updateEventForm(updatedFormInfo)
+      }
 
   return (
     <form onSubmit={undefined}>
@@ -18,4 +27,11 @@ const EventForm = (props) => {
   )
 }
 
-export default connect()(EventForm)
+mapStateToProps = (state) => {
+  debugger
+  return {
+    EventFormData: state.eventsForm
+  }
+}
+
+export default connect(mapStateToProps, {updateEventForm})(EventForm)
