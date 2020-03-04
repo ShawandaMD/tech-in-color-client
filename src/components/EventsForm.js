@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import updateEventForm from '../actions/eventsForm.js'
+
 
 
 const EventForm = (props) => {
