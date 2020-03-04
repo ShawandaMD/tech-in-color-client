@@ -8,7 +8,7 @@ import Signup from './components/Signup.js';
 import NavBar from './components/Navbar.js'
 import Events from './components/Events.js'
 import MyEvents from './components/MyEvents.js'
-import EventsForms from './components/EventsForm.js'
+import EventsForm from './components/EventsForm.js'
 import Homepage from  './components/Homepage.js'
 import { Route, Switch, withRouter } from 'react-router-dom'
 
