@@ -4,16 +4,17 @@ import {connect} from 'react-redux';
 const MyEvents = (props) => {
   const myEventCards = props.myEvents.map(e =>
     <li key={e.id}>{e.title} by {e.organizer}</li>)
-    debugger
+
   return (
     <ul>{myEventCards}</ul>
   )
 }
 
 const mapStateToProps = ({currentUser}) => {
+//debugger
   return {
     currentUser,
-    myEvents: props.currentUser.events
+    myEvents: currentUser.events
   }
 }
 
