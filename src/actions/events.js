@@ -29,3 +29,5 @@ export const getEvents = () => {
    .catch(console.log)
  }
 }
+
+export const createEvent = () => {}
