@@ -16,7 +16,7 @@ const EventForm = (props) => {
 
   return (
     <form onSubmit={undefined}>
-      <input type="text" placeholder="Title" id="title" name="title" value={undefined} onChange={undefined}/>
+      <input type="text" placeholder="Title" id="title" name="title" value={props.eventFormData.title} onChange={handleChange}/>
       <input type="text" placeholder="Description" id="description" name="description" value={undefined} onChange={undefined}/>
       <input type="date" placeholder="Date" id="date" name="date" value={undefined} onChange={undefined}/>
       <input type="time" placeholder="Time" id="time" name="time" value={undefined} onChange={undefined}/>
@@ -27,7 +27,6 @@ const EventForm = (props) => {
 }
 
 const mapStateToProps = (state) => {
-
   return {
     eventFormData: state.eventsForm
   }
