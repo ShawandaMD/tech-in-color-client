@@ -5,7 +5,7 @@ import userReducer from './userReducer';
 import currentUser from './currentUserReducer';
 import loginForm from './loginForm';
 import signupForm from './signupForm';
-import eventsForm from './eventsForm'
+import eventForm from './eventForm'
 
 export default combineReducers({
   activityReducer,
@@ -14,7 +14,7 @@ export default combineReducers({
   currentUser,
   loginForm,
   signupForm,
-  eventsForm
+  eventForm
 })
 
 /*each key (user:)will point to one reducer (UserReducer)*/
