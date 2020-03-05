@@ -1,11 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {updateEventForm} from '../actions/eventsForm.js' //I want to update the new events form
+import {updateEventForm} from '../actions/eventForm.js' //I want to update the new events form
 //create a new event
 
 
 const EventForm = (props) => {
-
   const handleChange = event => {
     const updatedFormInfo = {
      ...props.eventsFormData,
@@ -15,12 +14,12 @@ const EventForm = (props) => {
       }
 
   return (
-    <form onSubmit={undefined}>
+    <form >
       <input type="text" placeholder="Title" id="title" name="title" value={props.eventFormData.title} onChange={handleChange}/>
-      <input type="text" placeholder="Description" id="description" name="description" value={undefined} onChange={undefined}/>
-      <input type="date" placeholder="Date" id="date" name="date" value={undefined} onChange={undefined}/>
-      <input type="time" placeholder="Time" id="time" name="time" value={undefined} onChange={undefined}/>
-      <input type="link" placeholder="Link" id="link" name="link" value={undefined} onChange={undefined}/>
+      <input type="text" placeholder="Description" id="description" name="description" value={props.eventFormData.description} onChange={handleChange}/>
+      <input type="date" placeholder="Date" id="date" name="date" value={props.eventFormData.date} onChange={handleChange}/>
+      <input type="time" placeholder="Time" id="time" name="time" value={props.eventFormData.time} onChange={handleChange}/>
+      <input type="link" placeholder="Link" id="link" name="link" value={props.eventFormData.link} onChange={handleChange}/>
       <input type="submit" value="Create Event"/>
     </form>
   )
@@ -28,7 +27,7 @@ const EventForm = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    eventFormData: state.eventsForm
+    eventFormData: state.eventForm
   }
 }
 
