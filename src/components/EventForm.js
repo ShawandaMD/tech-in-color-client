@@ -5,9 +5,10 @@ import {updateEventForm} from '../actions/eventForm.js' //I want to update the n
 
 
 const EventForm = (props) => {
+
   const handleChange = event => {
     const updatedFormInfo = {
-     ...props.eventsFormData,
+     ...props.eventFormData,
      [event.target.name]: event.target.value
    }
      props.updateEventForm(updatedFormInfo)
