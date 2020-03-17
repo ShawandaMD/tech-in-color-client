@@ -12,7 +12,7 @@ const Navbar = (props) => {
       <NavLink exact activeClassName="dashboard" to="/my_events" > My Events </NavLink>
       <NavLink exact activeClassName="dashboard" to="/my_events/new" > Create Event </NavLink>
 
-      {props.currentUser ? `Welcome ${props.currentUser.f_name}!` : ""}
+      {props.currentUser ? `Welcome ${props.currentUser.full_name}!` : ""}
       {props.currentUser ? <Logout /> : <Login />}
     </div>
   )
