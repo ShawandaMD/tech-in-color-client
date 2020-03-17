@@ -1,11 +1,9 @@
 const initialState = {
   email: "",
   password: "",
-  f_name: "",
-  l_name: "",
+  full_name: "",
   city: "",
-  state: "",
-  zip_code: ""
+  state: ""
 }
 
 export default (state = initialState, action) => {
