@@ -1,11 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {updateEventForm} from '../actions/eventForm.js' //I want to update the new events form
+import {updateEventForm} from '../actions/eventForm.js'; //I want to update the new events form
 import {createEvent} from '../actions/events.js'//create a new event
 
 
 const EventForm = (props) => {
-
+  
   const handleChange = event => {
     const updatedFormInfo = {
      ...props.eventFormData,
@@ -14,9 +14,12 @@ const EventForm = (props) => {
      props.updateEventForm(updatedFormInfo)
       }
 
-    const handleSubmit =  event => {
+    const handleSubmit = event => {
       event.preventDefault()
-      props.createEvent(props.eventFormData)
+      props.createEvent({
+        ...props.eventFormData,
+        user_id: props.userId
+      })
     }
 
   return (
@@ -32,8 +35,10 @@ const EventForm = (props) => {
 }
 
 const mapStateToProps = (state) => {
+  const userId = state.currentUser ? state.currentUser.id : ""
   return {
-    eventFormData: state.eventForm
+    eventFormData: state.eventForm,
+    userId
   }
 }
 
