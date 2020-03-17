@@ -24,11 +24,9 @@ const Signup = (props) => {
     <form onSubmit={handleSubmit}>
       <input type="text" placeholder="Email" id="email" name="email" value={props.signupFormData.email} onChange={handleChange}/>
       <input type="text" placeholder="Password" id="password" name="password" value={props.signupFormData.password} onChange={handleChange}/>
-      <input type="text" placeholder="First Name" id="f_name" name="f_name" value={props.signupFormData.f_name} onChange={handleChange}/>
-      <input type="text" placeholder="Last Name" id="l_name" name="l_name" value={props.signupFormData.l_name} onChange={handleChange}/>
+      <input type="text" placeholder="Full Name" id="full_name" name="full_name" value={props.signupFormData.full_name} onChange={handleChange}/>
       <input type="text" placeholder="City" id="city" name="city" value={props.signupFormData.city} onChange={handleChange}/>
       <input type="text" placeholder="State" id="state" name="state" value={props.signupFormData.state} onChange={handleChange}/>
-      <input type="number" placeholder="Zipcode" id="zip_code" name="zip_code" value={props.signupFormData.zip_code} onChange={handleChange}/>
       <input type="submit" value="Sign Up"/>
     </form>
   )
