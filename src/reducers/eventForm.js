@@ -3,7 +3,9 @@ const initialState = {
   description: "",
   date: "",
   time: "",
-  link: ""
+  link: "",
+  city: "",
+  state: ""
 }
 
 export default (state = initialState, action) => {
