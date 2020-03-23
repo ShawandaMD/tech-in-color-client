@@ -17,7 +17,7 @@ const Signup = (props) => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    props.signup(props.signupFormData)
+    props.signup(props.signupFormData, props.history)
   }
 
   return (
