@@ -30,29 +30,28 @@ export const getEvents = () => {
  }
 }
 
-export const createEvent = (data) => {
-  console.log("NEW USER", data)
-  debugger
+export const createEvent = (data, history) => {
+  console.log("NEW EVENT", data)
   return dispatch => {
-    debugger
     const eventData = {
       event: data
     }
     return fetch("http://localhost:3001/events", {
       credentials: "include",
-      method: 'POST',
+      method: "POST",
       headers: {
-        Accept: 'application/json',
-          "Content-Type": 'application/json'
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(eventData)
     })
     .then((response) => response.json())
-    .then(event => {
-      if (event.error) {
-        alert(event.error)
+    .then(response => {
+      if (response.error) {
+        alert(response.error)
       } else {
-        dispatch(getEvents())
+        console.log(response)
+        dispatch(setEvents(response))
+        history.push('/events')
       }
     })
     .catch(console.log)
