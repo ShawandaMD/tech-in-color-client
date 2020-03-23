@@ -30,7 +30,6 @@ console.log("READ CREDENTIALS", credentials)
     })
     .then((response) => response.json())
     .then(user => {
-      //debugger
       if (user.error) {
         alert(user.error)
       } else {
@@ -54,7 +53,7 @@ export const logout = () => {
   };
 }
 
-export const signup = data => {
+export const signup = (data, history) => {
   console.log("NEW USER", data)
   return dispatch => {
     const userData = {
@@ -62,22 +61,23 @@ export const signup = data => {
     }
     return fetch("http://localhost:3001/signup", {
       credentials: "include",
-      method: 'POST',
+      method: "POST",
       headers: {
-        Accept: 'application/json',
-          "Content-Type": 'application/json'
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(userData)
     })
     .then((response) => response.json())
-    .then(user => {
-      if (user.error) {
-        alert(user.error)
+    .then((response) => {
+      if (response.error) {
+        alert(response.error)
       } else {
-        dispatch(setCurrentUser(user))
+      console.log(response)
+      dispatch(setCurrentUser(response))
+      dispatch(getEvents())
+      history.push('/events')
       }
     })
-    .catch(console.log)
   }
 }
 
